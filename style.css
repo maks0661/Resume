@@ -1,0 +1,232 @@
+:root {
+    --bg-color: #0d0d19; 
+    --accent-color: #00ffc8; 
+    --text-color: #e0e0f0;
+    --card-bg: rgba(25, 25, 40, 0.6); 
+    --border-radius: 8px;
+} 
+
+body {
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex; 
+    align-items: center;
+    flex-direction: column; 
+}
+
+h1, h2, h3 { color: var(--accent-color); font-weight: 500; }
+
+#line-1, #line-2 {
+    border-right: .15em solid var(--accent-color); 
+    white-space: nowrap;
+    overflow: hidden; 
+    letter-spacing: .05em; 
+}
+
+a { color: var(--accent-color); text-decoration: none; }
+
+a:hover { color: white; }
+
+#main-content { max-width: 1000px; }
+
+.card-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 255, 200, 0.1); 
+}
+
+.hero-section { text-align: center; padding: 50px; }
+
+.glitch-text { font-size: 3em; margin-bottom: 10px; }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--accent-color);
+    transition: transform 0.3s;
+    box-sizing: border-box;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 200, 0.2);
+}
+
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+    white-space: nowrap; 
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-right: 10px; 
+}
+
+.contact-button:hover { box-shadow: 0 0 15px var(--accent-color); }
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+.ai-cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate-cube 3s infinite linear; 
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--accent-color);
+    background: rgba(0, 255, 200, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+.front  { transform: rotateY(0deg) translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes rotate-cube {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.preloader-text {
+    margin-top: 20px;
+    color: var(--accent-color);
+    font-family: 'Fira Code', monospace;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start; 
+    }
+
+    #main-content {
+        padding: 20px 10px;
+    }
+
+    .hero-section {
+        padding: 40px 10px;
+    }
+
+    .glitch-text {
+        font-size: 2em; 
+    }
+
+    .subtitle {
+        font-size: 1em; 
+    }
+
+    .card-section {
+        padding: 20px; 
+    }
+
+    .experience-list {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-tag {
+        font-size: 0.8em;
+    }
+
+    .contact-button {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .ai-cube {
+        width: 80px;
+        height: 80px;
+    }
+
+    .face {
+        width: 80px;
+        height: 80px;
+        font-size: 0.7em;
+    }
+
+    .front  { transform: rotateY(0deg) translateZ(40px); }
+    .back   { transform: rotateY(180deg) translateZ(40px); }
+    .right  { transform: rotateY(90deg) translateZ(40px); }
+    .left   { transform: rotateY(-90deg) translateZ(40px); }
+    .top    { transform: rotateX(90deg) translateZ(40px); }
+    .bottom { transform: rotateX(-90deg) translateZ(40px); }
+}
+
+@media (max-width: 480px) {
+    h2, h3 {
+        font-size: 1.2em; 
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+}
