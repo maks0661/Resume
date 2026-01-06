@@ -130,16 +130,16 @@ a:hover { color: white; }
     box-shadow: 0 0 5px var(--accent-color);
 }
 
-.front  { transform: rotateY(0deg) translateZ(50px); }
+.front  { transform: rotateY(0deg)   translateZ(50px); }
 .back   { transform: rotateY(180deg) translateZ(50px); }
-.right  { transform: rotateY(90deg) translateZ(50px); }
+.right  { transform: rotateY(90deg)  translateZ(50px); }
 .left   { transform: rotateY(-90deg) translateZ(50px); }
-.top    { transform: rotateX(90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg)  translateZ(50px); }
 .bottom { transform: rotateX(-90deg) translateZ(50px); }
 
 @keyframes rotate-cube {
-    from { transform: rotateX(0deg) rotateY(0deg); }
-    to { transform: rotateX(360deg) rotateY(360deg); }
+    from { transform: rotateX(0deg)   rotateY(0deg); }
+      to { transform: rotateX(360deg) rotateY(360deg); }
 }
 
 .preloader-text {
@@ -155,42 +155,17 @@ a:hover { color: white; }
 }
 
 @media (max-width: 768px) {
-    body {
-        align-items: flex-start; 
-    }
+    body          { align-items: flex-start; }
+    #main-content { padding: 20px 10px; }
 
-    #main-content {
-        padding: 20px 10px;
-    }
+    .hero-section { padding: 40px 10px; }
+    .subtitle     { font-size: 1em; }
 
-    .hero-section {
-        padding: 40px 10px;
-    }
+    .card-section    { padding: 20px; }
+    .experience-list { flex-direction: column; gap: 10px;}
 
-    .glitch-text {
-        font-size: 2em; 
-    }
-
-    .subtitle {
-        font-size: 1em; 
-    }
-
-    .card-section {
-        padding: 20px; 
-    }
-
-    .experience-list {
-        flex-direction: column; 
-        gap: 10px;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skill-tag {
-        font-size: 0.8em;
-    }
+    .project-grid { grid-template-columns: 1fr; }
+    .skill-tag    { font-size: 0.8em; }
 
     .contact-button {
         display: block;
@@ -198,10 +173,7 @@ a:hover { color: white; }
         text-align: center;
     }
 
-    .ai-cube {
-        width: 80px;
-        height: 80px;
-    }
+    .ai-cube { width: 80px; height: 80px; }
 
     .face {
         width: 80px;
@@ -218,15 +190,7 @@ a:hover { color: white; }
 }
 
 @media (max-width: 480px) {
-    h2, h3 {
-        font-size: 1.2em; 
-    }
-
-    p {
-        font-size: 0.9em;
-    }
-
-    .project-card {
-        padding: 15px;
-    }
+    h2, h3 { font-size: 1.2em; }
+    p { font-size: 0.9em; }
+    .project-card { padding: 15px; }
 }
